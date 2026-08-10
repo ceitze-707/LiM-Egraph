@@ -1,0 +1,89 @@
+cmake_minimum_required(VERSION 3.16)
+project(IMCCompiler LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Fix Windows max/min macro conflict 
+add_compile_definitions(NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS USE_EGRAPH)
+
+# Include directories
+include_directories(
+    "${CMAKE_SOURCE_DIR}"
+    "D:/DESKBOOK/0809/mockturtle/include"
+    "D:/DESKBOOK/0809/lorina/include"
+    "D:/DESKBOOK/0809/z3-5.0.0-x64-win/z3-5.0.0-x64-win/include"
+    "D:/gurobi1001/win64/include"
+    # Mockturtle bundled dependencies
+    "D:/DESKBOOK/0809/mockturtle/lib/kitty"
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt"
+    "D:/DESKBOOK/0809/mockturtle/lib/bill"
+    "D:/DESKBOOK/0809/mockturtle/lib/percy"
+    "D:/DESKBOOK/0809/mockturtle/lib/abcesop"
+    "D:/DESKBOOK/0809/mockturtle/lib/abcsat"
+    "D:/DESKBOOK/0809/mockturtle/lib/json"
+    "D:/DESKBOOK/0809/mockturtle/lib/parallel_hashmap"
+    "D:/DESKBOOK/0809/mockturtle/lib/rang"
+    "D:/DESKBOOK/0809/mockturtle/lib/lorina"
+    "D:/DESKBOOK/0809/mockturtle/lib/nauty"
+)
+
+# Library directories
+link_directories(
+    "D:/DESKBOOK/0809/z3-5.0.0-x64-win/z3-5.0.0-x64-win/bin"
+    "D:/gurobi1001/win64/lib"
+)
+
+# Source files 
+add_executable(IMCCompiler
+    IMCCompiler.cpp
+    Scheduler.cpp
+    Scheduler.h
+    Netlist.cpp
+    Netlist.h
+    utils.h
+    # fmt library sources (needed for Mockturtle)
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/format.cc"
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/os.cc"
+)
+
+# Link libraries
+target_link_libraries(IMCCompiler
+    "D:/DESKBOOK/0809/z3-5.0.0-x64-win/z3-5.0.0-x64-win/bin/libz3.lib"
+    "D:/gurobi1001/win64/lib/gurobi100.lib"
+    "D:/gurobi1001/win64/lib/gurobi_c++md2017.lib"
+)
+
+# Windows: use MSVC multi-threaded runtime
+if(MSVC)
+    set_property(TARGET IMCCompiler PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
+
+# # Pipeline test binary
+add_executable(test_tiny2
+    test_verilog.cpp
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/format.cc"
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/os.cc"
+)
+target_link_libraries(test_tiny2
+    "D:/DESKBOOK/0809/z3-5.0.0-x64-win/z3-5.0.0-x64-win/bin/libz3.lib"
+    "D:/gurobi1001/win64/lib/gurobi100.lib"
+    "D:/gurobi1001/win64/lib/gurobi_c++md2017.lib"
+)
+if(MSVC)
+    set_property(TARGET test_tiny2 PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
+
+add_executable(test_pipeline
+    test_pipeline.cpp
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/format.cc"
+    "D:/DESKBOOK/0809/mockturtle/lib/fmt/fmt/os.cc"
+)
+target_link_libraries(test_pipeline
+    "D:/DESKBOOK/0809/z3-5.0.0-x64-win/z3-5.0.0-x64-win/bin/libz3.lib"
+    "D:/gurobi1001/win64/lib/gurobi100.lib"
+    "D:/gurobi1001/win64/lib/gurobi_c++md2017.lib"
+)
+if(MSVC)
+    set_property(TARGET test_pipeline PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
