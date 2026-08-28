@@ -4,7 +4,7 @@
 
 * `stage1`：前端局部 e-graph 候选探索，对完整逻辑网表做安全的局部替换。
 * `stage2`：将 e-graph 候选嵌入 IMCCompiler 的子网优化环节，按完整网表的 `(Size, MF)` 评价。
-* `papers`：baseline、eLogic 和 SkyEgg 论文。
+* `papers`：PPT 中直接引用的六篇论文：baseline、eLogic、E-morphic、SkyEgg，以及两篇 XMG/MIG 重写规则来源论文。
 
 目录只保留源码、最小测试输入和代表性结果；不包含 `build`、Rust `target`、许可证、第三方依赖、调试缓存和批量中间文件。
 
