@@ -1,0 +1,10 @@
+[package]
+name = "xmg_egraph_cut"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+egg = "0.9"
+
+[profile.release]
+opt-level = 3

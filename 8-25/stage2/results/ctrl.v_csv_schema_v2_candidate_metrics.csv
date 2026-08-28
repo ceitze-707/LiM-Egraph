@@ -1,0 +1,3 @@
+round,record_type,branch,candidates,replacements,gates_before,gates_after,depth_before,depth_after,fanout_before,fanout_after,mffc_total,boundary_total,boundary_max,local_gain_total,size,mf,cross,schedule_wall_ms,total_wall_ms,status
+1,generation,egraph,420,0,131,131,8,8,8,8,0,0,0,0,,,,,,no_replacement
+1,evaluation,imc,420,0,,,,,,,,,,,139,25,0,6514,6516,completed

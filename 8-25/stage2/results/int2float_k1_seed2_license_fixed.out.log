@@ -1,0 +1,93 @@
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+[06] IMC_SEED=2
+[06] IMC_THREADS=48
+++++++++++++++++++++Bench: testdata/int2float.v++++++++++++++++++++
+-----------------Round 0:-----------------
+Scheduling netlist with 260 nodes with MF bound 30
+Partitioning 260 nodes with weight = 2
+Partitioned into: 133 : 127
+#Frontier=9
+Use: 70 ms
+Partitioning 133 nodes with weight = 1.5
+Partitioned into: 60 : 73
+#Frontier=7
+Use: 29 ms
+Partitioning 127 nodes with weight = 1.5
+Partitioned into: 60 : 67
+#Frontier=9
+Use: 18 ms
+Partition Run time: 129 ms
+MF lower bound: 9
+=====================Progress: scheduled 60/260 nodes. Sub MF: 9
+=====================Progress: scheduled 120/260 nodes. Sub MF: 14
+=====================Progress: scheduled 193/260 nodes. Sub MF: 14
+=====================Progress: scheduled 260/260 nodes. Sub MF: 11
+Schedule ends, MF = 14
+Checking result: Size = 260; MF = 14
+Begin resub
+Checking result: Size = 260; MF = 14
+End resub
+Time = 0.098, #resub = 0
+-----------------Round 1:-----------------
+Pick 0-th pareto design
+Extract 257 nodes 3 - 259 / 260
+257; 231; 231; 235; 258; 287; 287; 287; 287; 287; 239; 
+[06 e-graph] subnet gates 239 -> 237, replacements=1, candidates=990, depth=17, max_fanout=6
+Scheduling netlist with 239 nodes with MF bound 31
+Partitioning 239 nodes with weight = 2
+Partitioned into: 120 : 119
+#Frontier=12
+Use: 104 ms
+Partitioning 120 nodes with weight = 1.5
+Partitioned into: 54 : 66
+#Frontier=10
+Use: 38 ms
+Partitioning 119 nodes with weight = 1.5
+Partitioned into: 62 : 57
+#Frontier=13
+Use: 35 ms
+Partition Run time: 185 ms
+MF lower bound: 13
+=====================Progress: scheduled 57/239 nodes. Sub MF: 15
+=====================Progress: scheduled 111/239 nodes. Sub MF: 13
+=====================Progress: scheduled 173/239 nodes. Sub MF: 17
+=====================Progress: scheduled 239/239 nodes. Sub MF: 17
+Schedule ends, MF = 17
+Checking result: Size = 242; MF = 17
+[06 imc] global: #nodes = 242, MF = 17
+[06 imc] Into Pareto
+Scheduling netlist with 237 nodes with MF bound 31
+Partitioning 237 nodes with weight = 2
+Partitioned into: 117 : 120
+#Frontier=12
+Use: 75 ms
+Partitioning 117 nodes with weight = 1.5
+Partitioned into: 54 : 63
+#Frontier=9
+Use: 26 ms
+Partitioning 120 nodes with weight = 1.5
+Partitioned into: 63 : 57
+#Frontier=13
+Use: 25 ms
+Partition Run time: 134 ms
+MF lower bound: 13
+=====================Progress: scheduled 54/237 nodes. Sub MF: 13
+=====================Progress: scheduled 111/237 nodes. Sub MF: 15
+=====================Progress: scheduled 174/237 nodes. Sub MF: 16
+=====================Progress: scheduled 237/237 nodes. Sub MF: 18
+Schedule ends, MF = 18
+Checking result: Size = 240; MF = 18
+[06 egraph] global: #nodes = 240, MF = 18
+[06 egraph] Into Pareto
+Begin resub
+Checking result: Size = 241; MF = 17
+End resub
+Time = 0.189, #resub = 0

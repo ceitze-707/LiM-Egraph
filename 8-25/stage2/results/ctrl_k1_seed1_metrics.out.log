@@ -1,0 +1,130 @@
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+Set parameter LogFile to value "mip1.log"
+[06] IMC_SEED=1
+[06] IMC_THREADS=48
+++++++++++++++++++++Bench: testdata/ctrl.v++++++++++++++++++++
+-----------------Round 0:-----------------
+Scheduling netlist with 174 nodes with MF bound 30
+Partitioning 174 nodes with weight = 2
+Partitioned into: 79 : 95
+#Frontier=18
+Use: 41 ms
+Partitioning 95 nodes with weight = 1.5
+Partitioned into: 43 : 52
+#Frontier=22
+Use: 23 ms
+Partition Run time: 73 ms
+MF lower bound: 25
+=====================Progress: scheduled 52/174 nodes. Sub MF: 25
+=====================Progress: scheduled 95/174 nodes. Sub MF: 24
+=====================Progress: scheduled 174/174 nodes. Sub MF: 18
+Schedule ends, MF = 25
+Checking result: Size = 174; MF = 25
+Begin resub
+Checking result: Size = 174; MF = 25
+1-th resub
+Checking result: Size = 174; MF = 25
+New netlist: #nodes = 174, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+2-th resub
+Checking result: Size = 174; MF = 25
+New netlist: #nodes = 174, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+3-th resub
+Checking result: Size = 174; MF = 25
+New netlist: #nodes = 174, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+4-th resub
+Checking result: Size = 174; MF = 26
+New netlist: #nodes = 174, MF = 26
+Not Pareto
+delete reduntant---------------------
+Checking result: Size = 173; MF = 25
+New netlist: #nodes = 173, MF = 25
+Into Pareto
+5-th resub
+Checking result: Size = 173; MF = 25
+New netlist: #nodes = 173, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+6-th resub
+Checking result: Size = 173; MF = 25
+New netlist: #nodes = 173, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+7-th resub
+Checking result: Size = 173; MF = 26
+New netlist: #nodes = 173, MF = 26
+Not Pareto
+delete reduntant---------------------
+Checking result: Size = 169; MF = 25
+New netlist: #nodes = 169, MF = 25
+Into Pareto
+End resub
+Time = 0.186, #resub = 7
+-----------------Round 1:-----------------
+Pick 0-th pareto design
+Extract 161 nodes 8 - 168 / 169
+161; 132; 142; 135; 126; 126; 126; 135; 135; 135; 129; 
+[06 e-graph] subnet gates 129 -> 127, replacements=1, candidates=319, depth=9->9, max_fanout=6->6, selected_mffc_total=3, selected_boundary_total=5, selected_boundary_max=5, selected_local_gain_total=1
+Scheduling netlist with 129 nodes with MF bound 31
+Partitioning 129 nodes with weight = 2
+Partitioned into: 59 : 70
+#Frontier=18
+Use: 36 ms
+Partition Run time: 39 ms
+MF lower bound: 25
+=====================Progress: scheduled 59/129 nodes. Sub MF: 23
+=====================Progress: scheduled 129/129 nodes. Sub MF: 25
+Schedule ends, MF = 25
+Checking result: Size = 137; MF = 25
+[06 imc] global: #nodes = 137, MF = 25, schedule_wall_ms=4590, total_wall_ms=4592
+[06 imc] Into Pareto
+Scheduling netlist with 127 nodes with MF bound 31
+Partitioning 127 nodes with weight = 2
+Partitioned into: 58 : 69
+#Frontier=19
+Use: 24 ms
+Partition Run time: 33 ms
+MF lower bound: 25
+=====================Progress: scheduled 69/127 nodes. Sub MF: 25
+=====================Progress: scheduled 127/127 nodes. Sub MF: 25
+Schedule ends, MF = 25
+Checking result: Size = 135; MF = 25
+[06 egraph] global: #nodes = 135, MF = 25, schedule_wall_ms=2010, total_wall_ms=2011
+[06 egraph] Into Pareto
+Begin resub
+Checking result: Size = 133; MF = 25
+1-th resub
+Checking result: Size = 132; MF = 25
+New netlist: #nodes = 132, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+2-th resub
+Checking result: Size = 132; MF = 25
+New netlist: #nodes = 132, MF = 25
+Into Pareto
+no reduntant nodes--------------------
+3-th resub
+Checking result: Size = 132; MF = 26
+New netlist: #nodes = 132, MF = 26
+Not Pareto
+delete reduntant---------------------
+Checking result: Size = 131; MF = 25
+New netlist: #nodes = 131, MF = 25
+Into Pareto
+4-th resub
+Checking result: Size = 131; MF = 26
+New netlist: #nodes = 131, MF = 26
+Not Pareto
+delete reduntant---------------------
+Checking result: Size = 130; MF = 25
+New netlist: #nodes = 130, MF = 25
+Into Pareto
+End resub
+Time = 0.089, #resub = 4
